@@ -8,7 +8,7 @@ export default function Square(props: Props) {
   const [value, setValue] = useState(null);
 
   return (
-    <button className={styles.square} onClick={() => setValue("X")}>
+    <button className={styles.square} onClick={() => setValue("🦝")}>
       {value}
     </button>
   );
