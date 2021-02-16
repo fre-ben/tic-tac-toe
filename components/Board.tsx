@@ -4,16 +4,16 @@ import Square from "./Square";
 
 export default function Board() {
   const [squares, setSquares] = useState(Array(9).fill(null));
-  const [xIsNext, setXIsNext] = useState(true);
+  const [raccoonIsNext, setraccoonIsNext] = useState(true);
 
   function handleClick(i) {
     if (calculateWinner(squares) || squares[i]) {
       return;
     }
     const newSquares = [...squares];
-    newSquares[i] = xIsNext ? "🦝" : "🦊";
+    newSquares[i] = raccoonIsNext ? "🦝" : "🦊";
     setSquares(newSquares);
-    setXIsNext(!xIsNext);
+    setraccoonIsNext(!raccoonIsNext);
   }
 
   function renderSquare(i: number) {
@@ -25,7 +25,7 @@ export default function Board() {
   if (winner) {
     status = "Winner: " + winner;
   } else {
-    status = "Next player: " + (xIsNext ? "🦝" : "🦊");
+    status = "Next player: " + (raccoonIsNext ? "🦝" : "🦊");
   }
 
   return (
